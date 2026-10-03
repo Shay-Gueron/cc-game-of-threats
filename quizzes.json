@@ -1,0 +1,37 @@
+{
+  "course": "Introduction to Cybersecurity and Cybersecurity Certification",
+  "instructor": "Prof. Shay Gueron",
+  "passwordSha256": "",
+  "quizzes": [
+    {
+      "id": "floorzero",
+      "title": "Floor Zero: Before the Climb",
+      "open": true
+    },
+    {
+      "id": "domain1",
+      "title": "Domain 1: Security Principles",
+      "open": false
+    },
+    {
+      "id": "domain2",
+      "title": "Domain 2: Security Governance",
+      "open": false
+    },
+    {
+      "id": "domain3",
+      "title": "Domain 3: Identity and Access Management (IAM) Concepts",
+      "open": false
+    },
+    {
+      "id": "domain4",
+      "title": "Domain 4: Networking and Cloud Security Concepts",
+      "open": false
+    },
+    {
+      "id": "domain5",
+      "title": "Domain 5: Security Operations and Incident Response",
+      "open": false
+    }
+  ]
+}

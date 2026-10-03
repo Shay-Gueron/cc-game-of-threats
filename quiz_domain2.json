@@ -1,0 +1,230 @@
+{
+  "id": "domain2",
+  "title": "Domain 2: Security Governance",
+  "questionsPerGame": 10,
+  "minutes": 10,
+  "identification": "required",
+  "passFloor": null,
+  "questions": [
+    {
+      "q": "A flood closes a company headquarters for two weeks. Team A runs payroll and customer phone support from a rented office with paper forms. Team B rebuilds the servers and restores the data. Team C earlier checked whether the outage was an attack and closed the case. Which plan governs the work of Team A?",
+      "options": [
+        "The disaster recovery plan",
+        "The incident response plan",
+        "The business continuity plan",
+        "The crisis communication plan"
+      ],
+      "answer": 2,
+      "explain": "Business continuity keeps the critical business functions operating during a disruption. Disaster recovery is the work of Team B, which restores the IT systems and data."
+    },
+    {
+      "q": "A fire destroys the computer room of a mail-order company. The manager splits the first-day tasks between the business continuity team and the disaster recovery team. Which task belongs to the disaster recovery team?",
+      "options": [
+        "Rebuilding the order database on replacement servers",
+        "Routing customer calls to staff phones at a spare office",
+        "Recording new customer orders by hand on paper forms",
+        "Telling key suppliers to deliver to another address"
+      ],
+      "answer": 0,
+      "explain": "Disaster recovery returns IT systems and data to operation. Routing calls to a spare office looks technical, but it keeps a business function running without the lost systems, which is business continuity."
+    },
+    {
+      "q": "A planner begins a business continuity plan for a hospital. A list of threats with their likelihood already exists. The planner still does not know which departments must return first, or how many hours each department can be stopped before patients are harmed. Which activity produces this information?",
+      "options": [
+        "A qualitative risk assessment",
+        "A business impact analysis",
+        "A tabletop exercise of the plan",
+        "A vulnerability assessment"
+      ],
+      "answer": 1,
+      "explain": "A business impact analysis identifies the critical functions and how long each one can be down. A risk assessment produces the threat and likelihood list, which the planner already has."
+    },
+    {
+      "q": "A storm cuts power to a regional office. The staff notification worked, and every employee was reached within minutes. Two hours then passed while managers disagreed about whether the event was serious enough to move work to the alternate site, and about who could order the move. Which element was missing from the business continuity plan?",
+      "options": [
+        "The notification call tree for all staff",
+        "The list of critical business functions",
+        "The contact details of key suppliers",
+        "The criteria and authority to activate"
+      ],
+      "answer": 3,
+      "explain": "A business continuity plan must state when the plan is enacted and who may enact it. The call tree is not the gap, because every employee was reached within minutes."
+    },
+    {
+      "q": "A clinic keeps patient records on one server and stores nightly backups off site. A hardware part in the server fails at 09:00, although building power stays on. The backups are intact, but staff cannot reach any record for six hours until a spare part arrives. Which measure would have kept the records available during the failure?",
+      "options": [
+        "A failover cluster with a second server",
+        "An hourly backup in place of the nightly one",
+        "A second off-site store for backups",
+        "An uninterruptible power supply unit"
+      ],
+      "answer": 0,
+      "explain": "Redundancy removes a single point of failure by duplicating the component, so a second server takes over at once. More backups protect the data but do not keep the service running, and the data was never lost here."
+    },
+    {
+      "q": "A firm can tolerate about one day of downtime after losing its data center. The budget does not allow a duplicate center that runs all the time. An empty room is also rejected, because buying hardware would take weeks. The firm wants hardware and network links already installed, with staff loading the latest backups before work resumes. Which alternate site fits?",
+      "options": [
+        "A hot site",
+        "A warm site",
+        "A cold site",
+        "A mirror site"
+      ],
+      "answer": 1,
+      "explain": "A warm site has equipment and links in place but needs data to be restored before use. A hot site already runs with current data, which is the costly duplicate that the budget rules out."
+    },
+    {
+      "q": "A CEO says that firewalls and antivirus are enough. Last year the company bought three overlapping security tools, no manager could say which risks the board had accepted, and a regulator fined the company for a late breach report. What would a governance, risk, and compliance (GRC) program add?",
+      "options": [
+        "It operates the security tools and watches the alerts",
+        "It moves accountability for risk from the board to IT",
+        "It certifies the company against an international standard",
+        "It aligns security with business goals and legal duties"
+      ],
+      "answer": 3,
+      "explain": "GRC gives direction and oversight: what to protect, how much risk to accept, and how to meet legal duties. Operating the tools is security operations, which implements those decisions."
+    },
+    {
+      "q": "A retailer accepts payment cards. Team A drafts the security policy that the board signs, and Team B rates threats to the card systems and selects treatments. Team C collects evidence that each PCI DSS requirement is met and hands it to the assessor. A new manager calls the Team C work \"risk management\", because a failed assessment is a risk. Which label is correct for the Team C work?",
+      "options": [
+        "A governance activity",
+        "A compliance activity",
+        "A risk treatment activity",
+        "An incident response activity"
+      ],
+      "answer": 1,
+      "explain": "Compliance is the demonstration that the organization meets the requirements placed on it. Rating threats and selecting treatments is risk management, and that is the work of Team B."
+    },
+    {
+      "q": "A software company in Europe sells to banks. Customers ask for a certificate, issued by an accredited external auditor, which shows that the information security management system of the company meets an international standard. The company holds no card data and no health data. Which source provides the requirements for this certificate?",
+      "options": [
+        "The NIST Cybersecurity Framework",
+        "The HIPAA Security Rule",
+        "The ISO/IEC 27001 standard",
+        "The PCI DSS card standard"
+      ],
+      "answer": 2,
+      "explain": "ISO/IEC 27001 is an international standard for an information security management system, and accredited bodies certify against it. The NIST Cybersecurity Framework is voluntary guidance and has no formal certificate."
+    },
+    {
+      "q": "An auditor asks a company to show, for ransomware on the file servers, who owns the exposure, the rated likelihood and impact, the chosen treatment, and the current status. The company can show only a list of its servers and a list of past outages. Which GRC record is missing?",
+      "options": [
+        "The risk register",
+        "The asset inventory",
+        "The incident log",
+        "The policy library"
+      ],
+      "answer": 0,
+      "explain": "A risk register records each identified risk with its owner, rating, treatment, and status. The asset inventory is the list of servers, which the company already has."
+    },
+    {
+      "q": "An auditor confirms that a company meets every requirement of the security standard that its contracts demand. One month later, attackers breach the company through a weakness that the standard does not address. Which conclusion is correct?",
+      "options": [
+        "Compliance shows that every significant risk was treated",
+        "The audit was flawed, since compliant systems resist breaches",
+        "The standard should be dropped, since it failed to stop the breach",
+        "Compliance is a minimum baseline, and other risks still need treatment"
+      ],
+      "answer": 3,
+      "explain": "Compliance shows that defined requirements are met, and no standard covers every risk of every organization. Risk management must find and treat the risks that the standard leaves out."
+    },
+    {
+      "q": "A payroll clerk receives an email that uses her name, names her real manager, and mentions the payroll software that the company uses. The email asks her to sign in on a linked page. No other employee receives the message. Which term describes this attack?",
+      "options": [
+        "Spear phishing",
+        "Bulk phishing",
+        "Voice phishing",
+        "Whaling attack"
+      ],
+      "answer": 0,
+      "explain": "Spear phishing is a message tailored to one specific person or small group. Whaling is the same method aimed at a senior executive, and a payroll clerk is not one."
+    },
+    {
+      "q": "A caller says that he is from the help desk and that the account of the employee is flagged. The employee did not request any code, but a six-digit code has just arrived by text message. The caller asks the employee to read the code aloud. Why is the request dangerous?",
+      "options": [
+        "The code reveals the password stored on the phone",
+        "The code lets the caller install malware by text",
+        "The code completes a sign-in the caller started",
+        "The code unlocks the phone for remote control"
+      ],
+      "answer": 2,
+      "explain": "The caller started a sign-in, probably with a stolen password, and the texted code is the second factor that finishes it. The code does not expose the password, because the attacker needs the code only after the password is already known."
+    },
+    {
+      "q": "Attackers take the email and password pairs that leaked from a hobby forum and try them on a company VPN. Several pairs work, because employees used the same password in both places. The company already enforces 16-character passwords and a change every 90 days. Which control addresses this attack most directly?",
+      "options": [
+        "Raising the minimum length to 20 characters",
+        "Requiring multi-factor authentication on the VPN",
+        "Shortening the change period to 30 days",
+        "Requiring two symbols in every password"
+      ],
+      "answer": 1,
+      "explain": "The attackers hold valid passwords, so length and complexity rules do not stop them. Multi-factor authentication blocks the sign-in, because a stolen password alone is no longer enough."
+    },
+    {
+      "q": "A company trains all staff on phishing every year, yet the click rate in simulations stays high. In a survey, employees write: \"The directors share passwords with assistants and are exempt from the simulations, so the rules cannot matter.\" Which change addresses the cause that the survey shows?",
+      "options": [
+        "Stricter penalties for staff who click",
+        "A longer yearly training session for staff",
+        "A second phishing simulation each year",
+        "Leaders who visibly obey the same policy"
+      ],
+      "answer": 3,
+      "explain": "Security culture is set from the top, and staff copy what the leadership does. More training repeats a message that the staff already received and do not believe."
+    },
+    {
+      "q": "After several wire fraud attempts, the finance team attends a two-hour workshop. Each person practices how to verify a payment change request by calling a known number, and an instructor checks each step. Which term describes this activity?",
+      "options": [
+        "Security awareness",
+        "Security education",
+        "Security training",
+        "Security certification"
+      ],
+      "answer": 2,
+      "explain": "Training builds a specific skill through practice. Awareness only draws attention to security so that people recognize a concern, and it does not teach a procedure."
+    },
+    {
+      "q": "A CISO wants an early signal that the chance of a breach is growing. The CISO does not want a count of how busy the team was. Which measurement works as a key risk indicator?",
+      "options": [
+        "Share of key servers unpatched over 30 days",
+        "Number of awareness sessions held this quarter",
+        "Number of help desk tickets closed this month",
+        "Share of the security budget spent to date"
+      ],
+      "answer": 0,
+      "explain": "A key risk indicator signals a growing likelihood or impact of a risk, and unpatched servers raise the likelihood of a breach. The session count measures activity and says nothing about exposure."
+    },
+    {
+      "q": "A CISO reports to the board once a quarter. The board wants to see how each of five security goals performs against its agreed target, with a red, yellow, or green rating per goal. The view does not need live data or technical detail. Which reporting tool fits?",
+      "options": [
+        "A real-time dashboard",
+        "A detailed audit report",
+        "A written risk register",
+        "A security scorecard"
+      ],
+      "answer": 3,
+      "explain": "A scorecard rates performance against agreed targets at set intervals. A dashboard shows current values for ongoing monitoring, and the board does not need live data."
+    },
+    {
+      "q": "A security team wants one metric that shows whether its awareness program changes how staff behave. Which metric fits?",
+      "options": [
+        "The share of staff who completed the yearly course",
+        "The share of staff who report simulated phishing",
+        "The count of phishing emails that the filter blocks",
+        "The count of awareness posters placed in offices"
+      ],
+      "answer": 1,
+      "explain": "A reporting rate measures what staff do when a suspicious email arrives, which is the behavior that the program aims to change. Course completion measures attendance, not behavior."
+    },
+    {
+      "q": "A company runs a security awareness program. All staff completed the course and passed the final quiz. The CISO still wants evidence that staff act differently when a suspicious email arrives. Which metric shows this best?",
+      "options": [
+        "The number of staff who passed the course",
+        "The training hours given per person",
+        "The report rate for simulated phishing",
+        "The average score on the final quiz"
+      ],
+      "answer": 2,
+      "explain": "The report rate measures what staff do when a suspicious email arrives. A quiz score measures knowledge, and knowledge does not prove a change in behavior."
+    }
+  ]
+}

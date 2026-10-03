@@ -1,0 +1,218 @@
+{
+  "id": "floorzero",
+  "title": "Floor Zero: Before the Climb",
+  "questionsPerGame": 10,
+  "minutes": 10,
+  "identification": "required",
+  "passFloor": null,
+  "balanceByDomain": true,
+  "intro": "Floor Zero is a starting point, not a test. Most questions will be hard today, and that is expected. By the end of the course you will answer questions like these with confidence. Keep your code, and compare it with your results later in the course.",
+  "ranks": [
+    [
+      8,
+      "Natural Talent",
+      "dog",
+      "You already think like a defender. The course will sharpen it."
+    ],
+    [
+      5,
+      "Sharp Instincts",
+      "cat",
+      "Good instincts. The course will turn them into knowledge."
+    ],
+    [
+      2,
+      "Curious Climber",
+      "parrot",
+      "Now you know where the hard parts are. That is the purpose of Floor Zero."
+    ],
+    [
+      0,
+      "Fresh Start",
+      "dog",
+      "Everyone starts in the lobby. By the end of the course these questions will look different."
+    ]
+  ],
+  "questions": [
+    {
+      "domain": 1,
+      "q": "A web shop accepts card payments. Management signs a contract with a certified payment provider. The provider now processes every card, and the contract makes the provider liable for a breach of card data. The shop still accepts cards from its customers. Which risk treatment did the shop choose?",
+      "options": [
+        "Risk avoidance, because the shop no longer handles any card data",
+        "Risk acceptance, because the shop keeps selling by card",
+        "Risk mitigation, because a control lowers the likelihood",
+        "Risk transfer, because another party now carries the loss"
+      ],
+      "answer": 3,
+      "explain": "The shop still runs the activity, so the risk is not avoided. The contract moves the financial consequence to the provider, which is risk transfer."
+    },
+    {
+      "domain": 1,
+      "q": "A security chief orders an assessment. The report shows that the main servers have missed security patches for a year. Senior managers read the report and take no action. Attackers later enter through one of the reported flaws. Which duty did the managers fail?",
+      "options": [
+        "Non-repudiation, because nobody signed the report",
+        "Separation of duties, because one team did both tasks",
+        "Due care, because they did not act on a known risk",
+        "Due diligence, because nobody investigated the risk"
+      ],
+      "answer": 2,
+      "explain": "Due diligence is the investigation, and the assessment performed it. Due care is the reasonable action on what the investigation found, and that action never happened."
+    },
+    {
+      "domain": 1,
+      "q": "A company has four documents. Document A states that all laptops must encrypt their storage. Document B requires one named algorithm and key length. Document C lists the exact steps for a technician. Document D recommends encrypting USB drives too. A technician skips one step of Document C, yet the laptop ends up encrypted as Document B requires. Which document did the technician violate?",
+      "options": [
+        "The guideline",
+        "The standard",
+        "The policy",
+        "The procedure"
+      ],
+      "answer": 3,
+      "explain": "Document C is a procedure: mandatory step-by-step instructions. The policy (A) and the standard (B) were still met, and the guideline (D) is only a recommendation."
+    },
+    {
+      "domain": 2,
+      "q": "A fire shuts down a data center for two weeks. Salaries are due on Friday. The finance team prepares to pay all staff by manual bank transfers from a printed list, with no IT system. Which plan describes this activity?",
+      "options": [
+        "The incident response plan",
+        "The business continuity plan",
+        "The security awareness program",
+        "The disaster recovery plan"
+      ],
+      "answer": 1,
+      "explain": "Business continuity keeps critical business functions running during a disruption, here by manual means. Disaster recovery restores the IT systems themselves."
+    },
+    {
+      "domain": 2,
+      "q": "A board asks for one measurement that warns early that risk is rising, before any incident happens. Which measurement fits?",
+      "options": [
+        "The share of the security budget spent this year reached 80 percent",
+        "The count of administrator accounts with no review in 90 days is growing",
+        "The average time to close a help desk ticket fell to two hours",
+        "The count of security incidents recorded in the last quarter fell by half"
+      ],
+      "answer": 1,
+      "explain": "A key risk indicator looks ahead: unreviewed administrator accounts show growing exposure. The incident count looks back at events that already happened."
+    },
+    {
+      "domain": 2,
+      "q": "An attacker already knows the password of an employee. The attacker phones the employee, claims to be from IT support, and says: \"I am fixing your mailbox. Please read me the six-digit code that you just received by text.\" What is the attacker trying to obtain?",
+      "options": [
+        "The current password of the email account",
+        "The encryption key that protects the mailbox",
+        "The mobile phone number of the employee",
+        "The second sign-in factor of the account"
+      ],
+      "answer": 3,
+      "explain": "The attacker has the password and needs the one-time code, the second factor, to sign in. The invented support story is a pretext to make the employee hand it over."
+    },
+    {
+      "domain": 3,
+      "q": "An employee moved from the finance team to marketing two years ago. The employee still holds the right to approve payments and uses it to commit fraud. Every access that the employee received on the first day in finance was correct at that time. Which activity failed?",
+      "options": [
+        "Review of access after the change of role",
+        "Provisioning of the account at hiring",
+        "Definition of the role for the finance team",
+        "Deprovisioning of the account at termination"
+      ],
+      "answer": 0,
+      "explain": "The original provisioning was correct, and the employee never left, so deprovisioning at termination does not apply. Nobody reviewed and removed the old rights when the role changed."
+    },
+    {
+      "domain": 3,
+      "q": "A developer writes code and also deploys it to the production servers alone, with no second person involved. Each permission that the developer holds is needed for one of these two assigned tasks. An auditor still reports a finding. Which principle is violated?",
+      "options": [
+        "Mandatory access control",
+        "Separation of duties",
+        "Layered defense in depth",
+        "Principle of least privilege"
+      ],
+      "answer": 1,
+      "explain": "The developer holds no permission beyond the assigned tasks, so least privilege is met. The finding is that one person can complete a sensitive process alone, which separation of duties forbids."
+    },
+    {
+      "domain": 3,
+      "q": "A manager gives a contractor access to a project folder by adding the name of the contractor to the access list of the folder. The security team has no means to stop folder owners from doing this. Which access control model is in use, and what is its main weakness?",
+      "options": [
+        "Discretionary: owners decide, so access spreads with no control",
+        "Mandatory: labels decide, so owners cannot share what they create",
+        "Attribute-based: context decides, so access changes during the day",
+        "Role-based: roles decide, so each new share requires a new role"
+      ],
+      "answer": 0,
+      "explain": "Under discretionary access control, the owner of an object grants access at will. The weakness is that the organization cannot control or even see where access spreads."
+    },
+    {
+      "domain": 4,
+      "q": "A company stores customer files in a cloud storage service that it uses through a web browser (Software as a Service). An employee sets one folder to \"anyone with the link\". The files leak. The systems of the provider were not breached. Who is responsible for the leak?",
+      "options": [
+        "The company, because it controls its data and its sharing settings",
+        "Both equally, because the shared model splits every duty in half",
+        "Nobody, because a public link is a normal feature of the service",
+        "The provider, because it operates the whole service in this cloud model"
+      ],
+      "answer": 0,
+      "explain": "In every cloud service model, the customer stays responsible for its own data and for who may access it. The provider is responsible for the service itself, which was not breached."
+    },
+    {
+      "domain": 4,
+      "q": "An office has a strong firewall at the internet edge. All workstations and servers sit on one flat internal network. A phishing email infects one workstation, and the attacker connects from it directly to the database server. Which design change limits this attack most directly?",
+      "options": [
+        "A second firewall from another vendor at the edge of the internet",
+        "Separate network zones with filtering between them",
+        "Stronger encryption on the remote access VPN tunnel",
+        "A move of the internal network from IPv4 to IPv6"
+      ],
+      "answer": 1,
+      "explain": "The attacker was already inside, so more protection at the edge does not help. Segmentation limits what a compromised workstation can reach inside the network."
+    },
+    {
+      "domain": 4,
+      "q": "A firewall allows outbound traffic only on TCP port 443. Malware on a laptop sends stolen files to the attacker inside ordinary encrypted web traffic on that port, and the firewall passes it. Why did the firewall not stop the traffic?",
+      "options": [
+        "It decides by port number and does not inspect the content",
+        "It drops all encrypted traffic, so port 443 was never really open",
+        "It blocks only inbound traffic and ignores all outbound connections",
+        "It trusts every laptop that sits inside the office network"
+      ],
+      "answer": 0,
+      "explain": "A port-based rule sees only that the traffic uses an allowed port. Detection of misuse inside allowed traffic needs inspection at the application layer."
+    },
+    {
+      "domain": 5,
+      "q": "A software vendor publishes an installer and its SHA-256 hash on the same web page. An attacker takes over the web server and replaces both the installer and the hash. Users compare the hash, see a match, and install malware. Which mechanism would have exposed the swap?",
+      "options": [
+        "An AES-256 encryption of the installer file by the vendor",
+        "A second copy of the same hash lower on the same page",
+        "A longer hash value such as SHA-512 on the same page",
+        "A digital signature made with the vendor's private key"
+      ],
+      "answer": 3,
+      "explain": "A hash proves only that the file matches the hash, and the attacker replaced both. A digital signature needs the private key of the vendor, which the attacker does not hold."
+    },
+    {
+      "domain": 5,
+      "q": "An incident team disconnects an infected server from the network. Next, the team removes the malware and closes the flaw that let it in. Later, the team returns the server to service and watches it closely. Which phase of incident response is the middle step?",
+      "options": [
+        "Preparation",
+        "Containment",
+        "Eradication",
+        "Recovery"
+      ],
+      "answer": 2,
+      "explain": "Disconnecting the server is containment, and returning it to service is recovery. Removing the malware and closing the flaw between the two is eradication."
+    },
+    {
+      "domain": 5,
+      "q": "A company donates old laptops to a school. Before the donation, a technician deletes all files and empties the recycle bin. A student later recovers payroll files from one laptop with a free tool. Which step was missing?",
+      "options": [
+        "Labeling of the laptops as sensitive",
+        "Classification of the payroll files",
+        "Sanitization of all the drives",
+        "Masking of the salary fields on screen"
+      ],
+      "answer": 2,
+      "explain": "Deleting a file removes only the reference to it, and the data stays on the drive. Sanitization overwrites or destroys the data so that recovery is not feasible."
+    }
+  ]
+}

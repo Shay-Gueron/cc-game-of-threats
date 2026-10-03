@@ -1,0 +1,230 @@
+{
+  "id": "domain1",
+  "title": "Domain 1: Security Principles",
+  "questionsPerGame": 10,
+  "minutes": 10,
+  "identification": "required",
+  "passFloor": null,
+  "questions": [
+    {
+      "q": "An authorized pharmacist runs a nightly import into a hospital dosage database. A mapping error in the import writes wrong dose values into 300 patient records. The system stays online, the import is fully logged under her account, and only pharmacy staff viewed the records. Which security property was violated?",
+      "options": [
+        "Availability, because correct doses were unreachable",
+        "Integrity, because stored values became inaccurate",
+        "Confidentiality, because health data was mishandled",
+        "Accountability, because the change cannot be traced"
+      ],
+      "answer": 1,
+      "explain": "Integrity means that data stays accurate and complete, and an authorized user can still damage it by mistake. Availability is the tempting choice, but the system stayed online and served every request."
+    },
+    {
+      "q": "A flood of bogus requests hits a university exam platform during finals. Students cannot sign in for four hours. Later checks show that no outsider read any account and that no grade record changed. The university wants a control that addresses the security property that was lost. Which control fits?",
+      "options": [
+        "Encryption of the grade database at rest",
+        "Hash checks on every stored grade record",
+        "Digital signatures on submitted exam files",
+        "Redundant servers behind a load balancer"
+      ],
+      "answer": 3,
+      "explain": "Authorized users lost timely access, so the lost property is availability, and redundancy protects availability. Hash checks protect integrity, but no record was changed."
+    },
+    {
+      "q": "A finance manager approves wire transfers by email. After a fraudulent transfer, he says that he never sent the approval, and his assistant also has delegated access to his mailbox. The company wants future approvals that the approver cannot later deny. Which measure meets this goal?",
+      "options": [
+        "A digital signature made with his private key",
+        "A hash value attached to every approval email",
+        "A hardware token added to his mailbox login",
+        "An encrypted channel for all approval emails"
+      ],
+      "answer": 0,
+      "explain": "The goal is non-repudiation, and a signature made with a private key that only the manager holds binds the approval to him. A hash alone shows that a message did not change, but it does not show who created it."
+    },
+    {
+      "q": "A contractor signs in with his own account and a one-time code. His role should allow access to project files only, but broad share permissions let him open HR files. Nobody notices for months, because file access on that server is not logged. Which two security functions failed?",
+      "options": [
+        "Authentication and accounting",
+        "Identification and authentication",
+        "Authorization and accounting",
+        "Authentication and authorization"
+      ],
+      "answer": 2,
+      "explain": "Authorization failed because the permissions allowed more than his role needs, and accounting failed because his actions were not recorded. Authentication worked: he proved his own identity with two factors."
+    },
+    {
+      "q": "A company encrypts all customer data, and its access controls work as designed. Management then approves the sale of customer purchase histories to a marketing firm. Customers were never told and never agreed. Which principle is violated?",
+      "options": [
+        "Confidentiality, because a security control was bypassed",
+        "Integrity, because the records serve a new purpose now",
+        "Privacy, because people lost control of their own data",
+        "Availability, because customers cannot recall the data"
+      ],
+      "answer": 2,
+      "explain": "Privacy is the right of a person to control how information about that person is shared. Confidentiality is the tempting choice, but no control failed and the organization itself approved the disclosure."
+    },
+    {
+      "q": "A visitor tells a guard that he is a technician named Dan Levi. The guard finds that name on the approved list for the server room, writes the visit in the log, and opens the door. The guard does not ask for an ID card. The visitor was an impostor. Which step was missing?",
+      "options": [
+        "Authentication: the stated identity was not verified",
+        "Identification: the visitor never claimed an identity",
+        "Authorization: the name had no approval for that room",
+        "Accounting: the entry left no record for later review"
+      ],
+      "answer": 0,
+      "explain": "Stating a name is identification, which is only a claim, and authentication is the check that proves the claim. Authorization did happen, because the name was on the approved list."
+    },
+    {
+      "q": "An online retailer estimates that a customer-data breach is fairly likely in the next three years. Management buys a cyber-insurance policy that pays breach-response costs and legal fees. The retailer adds no security controls. Which statement describes the result?",
+      "options": [
+        "The risk was mitigated; its likelihood is much lower now",
+        "The risk was avoided; no exposure to it remains today",
+        "The risk was accepted; nothing about it has changed",
+        "The risk was transferred; its likelihood is the same"
+      ],
+      "answer": 3,
+      "explain": "Insurance moves the financial loss to another party in exchange for payment, which is risk transference. It is not acceptance, because management acted, and it is not mitigation, because a breach is exactly as likely as before."
+    },
+    {
+      "q": "A clinic plans a patient portal that would store payment card numbers. The risk assessment rates a card-data breach as high risk. Management cancels the card-storage feature, and the portal will show invoices only. Which risk treatment did management choose?",
+      "options": [
+        "Mitigation, because the impact of a breach is reduced",
+        "Avoidance, because the risky activity will not occur",
+        "Acceptance, because no new control was put in place",
+        "Transference, because patients now carry the exposure"
+      ],
+      "answer": 1,
+      "explain": "Avoidance means that the organization does not perform the activity that creates the risk. Mitigation keeps the activity and adds controls to reduce likelihood or impact, which did not happen here."
+    },
+    {
+      "q": "Two banks identify the same risk and agree on its likelihood and impact. The executives of Bank A formally accept the risk and document the decision. The executives of Bank B pay for controls to reduce it. An auditor finds that both decisions were made properly. Which statement explains the difference?",
+      "options": [
+        "Bank A estimated a lower impact than Bank B did",
+        "The banks have different risk tolerance levels",
+        "Bank B is exposed to a more capable threat actor",
+        "Bank A moved the financial loss to a third party"
+      ],
+      "answer": 1,
+      "explain": "Risk tolerance is the level of risk that management is willing to accept, so two organizations can treat the same assessed risk differently. The estimates were not different, because the banks agreed on likelihood and impact."
+    },
+    {
+      "q": "A web server that is reachable from the internet is missing a critical patch. A criminal group scans the internet for this flaw and steals databases from servers that have it. The administrator cannot patch this month, so she places the server behind a VPN that only staff can reach. Which statement describes the risk now?",
+      "options": [
+        "Likelihood is lower; the vulnerability remains",
+        "The vulnerability is gone; the threat still remains",
+        "The threat is gone; the vulnerability remains",
+        "Impact is lower; the likelihood stays the same"
+      ],
+      "answer": 0,
+      "explain": "The missing patch is the vulnerability and it is still there, but the group can no longer reach it easily, so exploitation is less likely. The threat is not gone, because the criminal group still exists and still scans."
+    },
+    {
+      "q": "A security manager can treat only one risk this quarter. Risk A: an earthquake could destroy the only data center, in a region with no record of earthquakes. Risk B: staff receive spam every day and delete it, with no measured loss. Risk C: sales laptops hold the full unencrypted customer database, and three were stolen last year. Risk D: the public web site was defaced twice last year and restored within an hour each time. Which risk comes first?",
+      "options": [
+        "Risk A, because its impact is the highest of the four",
+        "Risk B, because its likelihood is the highest of the four",
+        "Risk C, because both its likelihood and its impact are high",
+        "Risk D, because it is the most visible one to the public"
+      ],
+      "answer": 2,
+      "explain": "Priority follows likelihood and impact together. The earthquake has the highest impact but a negligible likelihood, and the spam has the highest likelihood but almost no impact."
+    },
+    {
+      "q": "A company policy requires every password to have at least 14 characters. A separate guideline describes passphrases built from four random words as the preferred form. An employee uses a 20-character password that is not a passphrase. An auditor must decide whether the employee broke a rule. Which finding is correct?",
+      "options": [
+        "A violation, because a guideline is a mandatory rule",
+        "A violation, because the newer document takes priority",
+        "No violation, because a guideline is only advice",
+        "No violation, because a policy is only advice"
+      ],
+      "answer": 2,
+      "explain": "A policy is mandatory and a guideline is recommended practice, and the password meets the policy. A policy is not advice: the employee is in the clear only because the password meets the policy."
+    },
+    {
+      "q": "A company policy requires full-disk encryption on all laptops. Technicians enable it with different algorithms and key lengths. Management wants a mandatory document that fixes one algorithm and a minimum key length for every laptop. The document will not describe the setup steps. Which document type is needed?",
+      "options": [
+        "A procedure, because it tells technicians how to work",
+        "A guideline, because it describes the preferred choice",
+        "A policy, because it states what management requires",
+        "A standard, because it sets specific required values"
+      ],
+      "answer": 3,
+      "explain": "A standard supports a policy with specific mandatory requirements, such as an algorithm and a key length. A procedure is the step-by-step instruction, and the scenario says that the document has no steps."
+    },
+    {
+      "q": "A retailer accepts payment cards under a merchant agreement with its bank, and the agreement requires PCI DSS compliance. A new manager argues that the retailer can ignore PCI DSS, because no law of the country mentions it. Which statement is correct?",
+      "options": [
+        "The manager is right, because only laws create binding duties",
+        "The manager is wrong, because the standard binds by contract",
+        "The manager is wrong, because the standard is a state regulation",
+        "The manager is right, because every standard is optional guidance"
+      ],
+      "answer": 1,
+      "explain": "PCI DSS is an industry standard, not a law or a government regulation. The retailer accepted it in a contract, so the standard is binding on the retailer and the bank can enforce it."
+    },
+    {
+      "q": "A retailer based in Texas has no office and no server in Europe. The retailer sells to customers who live in France and stores their names, addresses, and purchase histories. The legal team says that GDPR is irrelevant because the company is American. Which statement is correct?",
+      "options": [
+        "GDPR applies, because the customers are in the EU",
+        "GDPR does not apply, because the firm is outside the EU",
+        "GDPR applies only if the servers are inside the EU",
+        "GDPR applies only if the retailer seeks certification"
+      ],
+      "answer": 0,
+      "explain": "GDPR protects the personal data of people in the EU, wherever the organization or its servers are located. The location of the company is the tempting test, but it does not decide the question."
+    },
+    {
+      "q": "After data theft from unattended desks, a company adds three measures. First, every workstation locks its screen after five idle minutes through an operating system setting. Second, all staff sign a clean desk rule. Third, every laptop is fixed to its desk with a steel cable lock. Which list gives the control types in the same order?",
+      "options": [
+        "Technical, physical, administrative",
+        "Administrative, technical, physical",
+        "Physical, administrative, technical",
+        "Technical, administrative, physical"
+      ],
+      "answer": 3,
+      "explain": "A software setting is a technical control, a signed rule is an administrative control, and a cable lock is a physical control. The screen lock is not physical, because the system enforces it and no tangible barrier is involved."
+    },
+    {
+      "q": "An audit finds that interns can open payroll files on a file server over the network. The CISO wants a technical control that blocks this access before it happens, even when an intern ignores the rules. Which measure meets the request?",
+      "options": [
+        "A deny entry for interns in the share permissions",
+        "An alert raised when an intern opens a payroll file",
+        "A signed rule that forbids opening payroll files",
+        "A locked cage around the payroll server hardware"
+      ],
+      "answer": 0,
+      "explain": "A permission entry is enforced by the system and stops the access before it happens. The alert is also a technical control, but it only reports the access after the file is open."
+    },
+    {
+      "q": "A small firm protects its server room with firewall rules, disk encryption, and a signed access policy. Any person in the office can walk into the room. An auditor reports that one of the three control categories is missing. Which measure fills the gap?",
+      "options": [
+        "An intrusion detection sensor on the server subnet",
+        "A background check rule for staff who enter the room",
+        "A locked steel cage around the server hardware",
+        "A multi-factor login for all server administrators"
+      ],
+      "answer": 2,
+      "explain": "The firm has technical and administrative controls but no physical control, and a locked cage is a tangible barrier. The intrusion detection sensor sounds physical, but it watches network traffic and is a technical control."
+    },
+    {
+      "q": "Before signing a contract, a manager studies a backup vendor: audit reports, breach history, and contract terms. The review shows that the vendor stores backups unencrypted. She signs anyway, records no risk decision, and takes no protective action for a year. A breach then exposes the backups. Which statement describes her failure?",
+      "options": [
+        "Due diligence: she did not investigate the vendor",
+        "Due care: she did not act on a risk that she knew",
+        "Risk acceptance: she formally approved the exposure",
+        "Risk transference: the contract moved all liability"
+      ],
+      "answer": 1,
+      "explain": "Due care is the reasonable action that a prudent person takes after learning of a risk, and she took none. Due diligence was performed, because she investigated the vendor before signing."
+    },
+    {
+      "q": "An ISC2 member finds a flaw in a medical device made by her employer. The flaw can injure patients. Her manager orders her to stay silent to protect a major contract and says that the Code of Ethics requires loyal service to the employer. Which canon decides this conflict?",
+      "options": [
+        "Give diligent service to principals",
+        "Advance and protect the profession",
+        "Act honorably, justly, and legally",
+        "Protect society and the common good"
+      ],
+      "answer": 3,
+      "explain": "The four canons are applied in order, and the first canon (protect society, the common good, necessary public trust and confidence, and the infrastructure) outranks the rest. Service to principals is the third canon, so the duty to the employer gives way."
+    }
+  ]
+}

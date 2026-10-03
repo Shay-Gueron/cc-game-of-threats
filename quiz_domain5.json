@@ -1,0 +1,230 @@
+{
+  "id": "domain5",
+  "title": "Domain 5: Security Operations and Incident Response",
+  "questionsPerGame": 10,
+  "minutes": 10,
+  "identification": "required",
+  "passFloor": null,
+  "questions": [
+    {
+      "q": "An email gateway blocks outgoing files according to a sensitivity tag in the file metadata. The data owner rated a merger plan as Restricted in the data register. The plan still left the company by email, because the file itself carried no tag. Which data handling step was skipped?",
+      "options": [
+        "The classification of the file",
+        "The encryption of the file",
+        "The labeling of the file",
+        "The masking of the file"
+      ],
+      "answer": 2,
+      "explain": "The owner already classified the plan, so classification was done. Labeling is the step that marks the data itself, so that people and tools can see the level and enforce it."
+    },
+    {
+      "q": "Developers need a copy of the production database for testing. The test application must still see values that look like real names and 16-digit card numbers. Nobody needs the original values in the test copy, and no key may exist that could restore them. Which technique fits?",
+      "options": [
+        "Masking the sensitive fields",
+        "Hashing the sensitive fields",
+        "Encrypting the sensitive fields",
+        "Labeling the sensitive fields"
+      ],
+      "answer": 0,
+      "explain": "Masking replaces the real values with fictitious values of the same format, with no way back. Encryption is reversible with a key, and a hash value does not keep the format of a name or a card number."
+    },
+    {
+      "q": "Twelve solid-state drives held unencrypted patient records. The drives have failed and no longer respond to any command. The drives must now leave the clinic for recycling. Which sanitization method is appropriate?",
+      "options": [
+        "Overwriting each drive with random data",
+        "Degaussing each drive with a strong magnet",
+        "Erasing the encryption key of each drive",
+        "Shredding each drive into small particles"
+      ],
+      "answer": 3,
+      "explain": "Physical destruction is the only method that works on a drive that accepts no commands. Degaussing is tempting, but it acts on magnetic media and has no effect on the flash memory of a solid-state drive."
+    },
+    {
+      "q": "A firm must send a 2 TB backup to a partner every night over the internet. The firm holds the authentic public key of the partner, and the two sides share no secret. The transfer must be confidential and fast. Which design meets both needs?",
+      "options": [
+        "Encrypt the whole backup with the public key of the partner",
+        "Encrypt the backup with a new AES key, and that key with the public key",
+        "Sign the backup with the private key of the firm before the transfer",
+        "Agree by email on an AES key, then encrypt the backup with that key"
+      ],
+      "answer": 1,
+      "explain": "Symmetric encryption is fast for bulk data, and asymmetric encryption protects the short symmetric key in transit. Public-key encryption of the whole backup is far too slow, and a signature gives no confidentiality."
+    },
+    {
+      "q": "A vendor posts an installer and its SHA-256 value on one download server. A user computes SHA-256 over the downloaded file, and the values match. An attacker who controls that server could have replaced both the file and the posted value. The user holds the authentic public key of the vendor. Which addition lets the user confirm the origin of the file?",
+      "options": [
+        "A SHA-512 value posted next to the SHA-256 value",
+        "A TLS connection from the user to the download server",
+        "A digital signature by the vendor over the installer",
+        "An AES-256 encryption of the installer on the server"
+      ],
+      "answer": 2,
+      "explain": "A hash match shows only that the file equals the posted value, and an attacker can post a new value. Only the vendor can produce a valid signature, while TLS proves only which server answered, and that server is the compromised one."
+    },
+    {
+      "q": "An agency protects traffic that must stay secret for 25 years. The connection uses RSA key establishment, RSA signatures, AES-256, and SHA-384. An adversary records the encrypted traffic today and plans to decrypt it when a large quantum computer exists. Which change addresses this threat most directly?",
+      "options": [
+        "Replacing the RSA signature scheme with ML-DSA",
+        "Replacing the RSA key establishment with ML-KEM",
+        "Replacing the RSA key establishment with ECDH",
+        "Replacing the SHA-384 hash with SHA3-512"
+      ],
+      "answer": 1,
+      "explain": "The recorded traffic becomes readable when the key establishment is broken, and a large quantum computer breaks both RSA and elliptic-curve key establishment. ML-DSA protects authentication against future forgery, which does not help against decryption of traffic recorded today."
+    },
+    {
+      "q": "An attacker gains administrator rights on a web server and erases the local log files. The investigators now need the erased records. Which earlier practice would have kept the records available?",
+      "options": [
+        "Hashing the local log files every night",
+        "Encrypting the local log files with AES-256",
+        "Extending the local log retention to a full year",
+        "Forwarding each log entry to a separate server"
+      ],
+      "answer": 3,
+      "explain": "Records that exist only on the compromised system can be erased by an administrator. A nightly hash is tempting, but it only reveals that the files changed and does not bring the records back."
+    },
+    {
+      "q": "The VPN log shows a sign-in by an engineer from another country at 09:02. The badge system shows the same engineer entering the head office at 09:05. The file server shows a large download by that account at 09:10. Each record alone looks normal. Which function of a central monitoring system raises one alert from these three records?",
+      "options": [
+        "Log correlation",
+        "Log aggregation",
+        "Log normalization",
+        "Log retention"
+      ],
+      "answer": 0,
+      "explain": "Correlation relates records from different sources to each other and finds a pattern that no single record shows. Aggregation only collects the records in one place, and normalization only puts them in a common format."
+    },
+    {
+      "q": "A turbine maker finds that intruders stayed in its network for 14 months. The intruders used custom malware, worked slowly, and copied design files. No ransom note arrived, no data appeared for sale, and nobody made a public statement. Which threat actor and motivation fit best?",
+      "options": [
+        "An organized crime group that seeks profit",
+        "A hacktivist group that seeks publicity",
+        "A nation-state actor that seeks secrets",
+        "An unskilled attacker who seeks attention"
+      ],
+      "answer": 2,
+      "explain": "Long, quiet, well-funded access aimed at strategic designs is typical of a nation-state actor. Organized crime is tempting because of the skill level, but such a group would sell the data or demand a payment."
+    },
+    {
+      "q": "A threat group attacks banks. For each victim the group uses new servers, new domain names, and recompiled malware. A security team wants threat intelligence that will still help to detect this group next year. Which intelligence has the longest useful life here?",
+      "options": [
+        "The file hashes of the malware from the last attack",
+        "The IP addresses of the servers in the last attack",
+        "The domain names registered for the last attack",
+        "The techniques of the group, mapped to MITRE ATT&CK"
+      ],
+      "answer": 3,
+      "explain": "Hashes, addresses, and domain names are indicators that this group changes for every victim. Behavior is hard to change, so the tactics and techniques, described in a threat framework, stay useful much longer."
+    },
+    {
+      "q": "During a ransomware attack, the monitoring team raised the alert within minutes and identified the malware correctly. Two hours then passed, because nobody knew who had the authority to disconnect the order system, and the contact list was outdated. Which part of incident response was deficient?",
+      "options": [
+        "Preparation before the incident",
+        "Detection and analysis of events",
+        "Containment of the infection",
+        "Recovery of the affected systems"
+      ],
+      "answer": 0,
+      "explain": "Roles, authority, and contact lists are defined in the incident response plan during preparation. Containment was late, but the cause was the missing preparation and not a fault in the containment action itself."
+    },
+    {
+      "q": "A team responds to malware on three servers. The servers are already isolated from the network. The team now deletes the malicious files, disables the accounts that the attacker created, and patches the exploited flaw. The servers have not yet returned to production. Which activity is the team performing now?",
+      "options": [
+        "Containment",
+        "Eradication",
+        "Recovery",
+        "Detection"
+      ],
+      "answer": 1,
+      "explain": "Eradication removes the malware and the access paths of the attacker. Containment was the earlier isolation, and recovery is the later return of the servers to normal operation."
+    },
+    {
+      "q": "A tabletop exercise last month concluded that the incident response plan is sound. Management now wants evidence that the team can really rebuild a compromised server from backup within the four-hour target. Which exercise provides this evidence?",
+      "options": [
+        "A second tabletop exercise with a new scenario",
+        "A checklist review of the written plan document",
+        "A walk-through of the plan with all managers",
+        "A functional test that performs the steps in a lab"
+      ],
+      "answer": 3,
+      "explain": "Only an exercise that performs the real technical steps can measure the time that they take. A tabletop exercise is a discussion, so it tests roles and decisions but not the actual duration."
+    },
+    {
+      "q": "A billing server runs an operating system that reached end of life last month. The billing application cannot move to a supported system for one year. Which compensating control best reduces the chance that a new flaw in the operating system is exploited during that year?",
+      "options": [
+        "Scanning the server every week for new flaws",
+        "Waiting for the next security patch from the supplier",
+        "Isolating the server on a restricted network segment",
+        "Backing up the server every night to offline media"
+      ],
+      "answer": 2,
+      "explain": "An end-of-life system receives no more patches, so the exposure must be reduced by isolation and strict access rules. A scan only reports a flaw that cannot be patched, and a backup limits the damage but not the chance of an attack."
+    },
+    {
+      "q": "An audit of 30 web servers finds that 6 allow an old TLS version and run extra services. Every past change has an approved ticket. However, no document defines the secure settings that a web server must have, so the team cannot say which servers are wrong. What is missing?",
+      "options": [
+        "A change approval board",
+        "A configuration baseline",
+        "A rollback procedure",
+        "A hardware asset inventory"
+      ],
+      "answer": 1,
+      "explain": "A configuration baseline is the documented, agreed set of settings against which each system is compared. Change approval exists here, but approval without a baseline gives no reference state."
+    },
+    {
+      "q": "A firewall change was requested, peer reviewed, approved, and installed in the scheduled window. The change blocked the order system. The outage lasted five hours, because nobody knew how to return the firewall to its previous state. Which element of change management was missing?",
+      "options": [
+        "A tested rollback plan",
+        "A formal change request",
+        "A change advisory review",
+        "A planned change window"
+      ],
+      "answer": 0,
+      "explain": "A rollback plan describes how to restore the last working state when a change fails. Request, review, approval, and scheduling all took place, so none of them explains the long outage."
+    },
+    {
+      "q": "A company schedules a two-day exercise. The attack specialists run one technique at a time and announce it. The monitoring analysts check at once whether an alert fired, tune the detection rule, and ask for the technique to be repeated. Which type of exercise is this?",
+      "options": [
+        "A red team engagement",
+        "An external penetration test",
+        "A purple team exercise",
+        "A blue team monitoring drill"
+      ],
+      "answer": 2,
+      "explain": "Purple teaming is open cooperation between attackers and defenders to improve detection step by step. A red team engagement is tempting, but a red team works without announcing its actions and reports at the end."
+    },
+    {
+      "q": "A static analysis tool scans all source code of a web application and reports no issues. A manager concludes that no more testing is needed. Which flaw can only dynamic analysis of the running application find?",
+      "options": [
+        "A password written directly in a source file",
+        "A database query built from raw user input",
+        "A call to an unsafe memory copy function",
+        "A weak TLS setting on the deployed server"
+      ],
+      "answer": 3,
+      "explain": "Static analysis reads the code without running it, so it cannot see how the deployed environment is configured. The other three flaws are patterns in the source code, which static analysis inspects."
+    },
+    {
+      "q": "A team designs a new payment service. No code exists yet. The team draws a diagram of data flows and trust boundaries, lists what an attacker could attempt at each boundary, and decides which controls would stop each attempt. Which activity is this?",
+      "options": [
+        "A threat modeling session",
+        "A static analysis review",
+        "A dynamic analysis run",
+        "A vulnerability scanning run"
+      ],
+      "answer": 0,
+      "explain": "Threat modeling works on the design and finds weaknesses before any code exists. Static analysis needs source code, and dynamic analysis and vulnerability scanning need a running system."
+    },
+    {
+      "q": "During an authorized physical penetration test, a tester in a courier uniform tells the receptionist that a parcel must be handed to the server administrator in person. The receptionist unlocks the door to the office floor for the tester. The tester followed no employee through any door. Which technique succeeded?",
+      "options": [
+        "Tailgating behind an employee",
+        "Impersonation of a trusted role",
+        "Phishing through a fake message",
+        "Baiting with an infected device"
+      ],
+      "answer": 1,
+      "explain": "The tester gained entry by pretending to be a courier, which is impersonation. Tailgating means passing through a door behind an authorized person, and here the door was opened for the tester on purpose."
+    }
+  ]
+}

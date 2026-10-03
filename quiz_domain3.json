@@ -1,0 +1,230 @@
+{
+  "id": "domain3",
+  "title": "Domain 3: Identity and Access Management (IAM) Concepts",
+  "questionsPerGame": 10,
+  "minutes": 10,
+  "identification": "required",
+  "passFloor": null,
+  "questions": [
+    {
+      "q": "A new claims department starts work. Each manager sends IT a free-text list of the permissions that each new employee should get. A year later, employees with the same job hold different permissions, and access reviewers have no baseline to compare against. Which life cycle activity was missing?",
+      "options": [
+        "Provisioning of access",
+        "Periodic access review",
+        "Definition of roles",
+        "Removal of old accounts"
+      ],
+      "answer": 2,
+      "explain": "Roles definition states which permissions belong to each job function, and this gives the baseline. Provisioning did happen, but each grant followed a free-text list and not a defined role."
+    },
+    {
+      "q": "A help desk receives a request: \"Give the new hire the same access as Dana.\" Dana has worked in four departments in ten years and still holds access from each one. The new hire will work as a claims adjuster. Which action gives the new hire correct access?",
+      "options": [
+        "Assign the role that is defined for the job",
+        "Copy the account of Dana and review it later",
+        "Copy the access of the manager of the new hire",
+        "Create an empty account and add access on request"
+      ],
+      "answer": 0,
+      "explain": "Provisioning from a defined role gives exactly the access that the job needs. A copy of the account of Dana also copies the excess permissions that Dana collected in four departments."
+    },
+    {
+      "q": "A new employee starts on Monday. HR has recorded the person, the manager has approved the access request, and the job has a defined role. On Monday the employee cannot sign in, and the directory holds no account for the employee. Which step was not carried out?",
+      "options": [
+        "Authentication",
+        "Authorization",
+        "Roles definition",
+        "Provisioning"
+      ],
+      "answer": 3,
+      "explain": "Provisioning is the joiner step that creates the account and assigns the role. Authentication cannot be the missing step, because there is no account to authenticate against."
+    },
+    {
+      "q": "An employee transferred from finance to marketing two years ago and received marketing permissions on the transfer day. Nobody removed the finance permissions. The employee still works for the company. Which recurring control would detect these leftover permissions?",
+      "options": [
+        "Deprovisioning on the HR exit date",
+        "Access review by the current manager",
+        "Second factor at every sign-in",
+        "Roles definition for marketing jobs"
+      ],
+      "answer": 1,
+      "explain": "A periodic access review checks whether each permission is still needed and finds permissions left over after a job change. Deprovisioning on the exit date does not apply, because the employee has not left."
+    },
+    {
+      "q": "A company starts quarterly access reviews for its finance application. To save time, IT sends each user a list of the permissions that the user holds and asks the user to confirm that all are still needed. Every user confirms everything. Who should confirm the permissions instead?",
+      "options": [
+        "The administrator who granted the access",
+        "The help desk agent who made the account",
+        "The manager or the owner of the data",
+        "The auditor who checks the review report"
+      ],
+      "answer": 2,
+      "explain": "The manager or the data owner knows what the job needs and has no interest in keeping the access. The administrator who granted the access knows how it was granted, but not whether the business still needs it."
+    },
+    {
+      "q": "An audit finds 40 active accounts of contractors whose contracts ended months ago. Each account has a strong password and multi-factor authentication. HR records trigger the removal of employee accounts, but contractors are not in the HR system. Which change best prevents a recurrence?",
+      "options": [
+        "Disable each account when its contract ends",
+        "Require a new second factor on each account",
+        "Review each account once every twelve months",
+        "Extend the password length on each account"
+      ],
+      "answer": 0,
+      "explain": "Deprovisioning must be tied to the record that shows when the person leaves, here the contract end date. A yearly review only finds the accounts later, after months of unneeded access."
+    },
+    {
+      "q": "A company decides to dismiss a database administrator for misconduct and will tell the administrator in a meeting at 10:00. A colleague notes that an employee who resigned last month kept access until the last working day and proposes the same here. When should the access of the dismissed administrator end?",
+      "options": [
+        "At the end of the last working day",
+        "After the handover of open tasks",
+        "After the exit interview with HR",
+        "At the time of the meeting at 10:00"
+      ],
+      "answer": 3,
+      "explain": "For an involuntary termination, access ends when the person is told, because an upset person with privileged access can cause damage. Access until the last working day fits a friendly resignation, not a dismissal."
+    },
+    {
+      "q": "Employees authenticate to a central identity service each morning with a password. The email, payroll, and ticketing applications then accept an assertion from that service and do not ask for credentials. A manager describes the setup as multi-factor authentication. Which statement about the setup is correct?",
+      "options": [
+        "It adds a second factor to each application sign-in",
+        "It reduces the number of passwords for each user",
+        "It limits each user to the permissions of one role",
+        "It records the sessions of each privileged user"
+      ],
+      "answer": 1,
+      "explain": "The setup is single sign-on: one authentication serves many applications, so each user keeps fewer passwords. It is not multi-factor authentication, because the only factor is still one password."
+    },
+    {
+      "q": "A company connects 30 applications to single sign-on, so each user now has one password. An analyst notes that one phished password now opens all 30 applications. Which addition at the identity provider best reduces this risk?",
+      "options": [
+        "A security question after the password",
+        "A second password for the same account",
+        "A one-time code from a hardware token",
+        "A minimum password length of 16 characters"
+      ],
+      "answer": 2,
+      "explain": "A hardware token adds a possession factor that a phished password does not give to the attacker. A security question is a second knowledge factor, and it can be phished in the same way as the password."
+    },
+    {
+      "q": "A data center door requires staff to present a badge and then scan a fingerprint. A remote portal requires a password and then the answer to a security question. A manager claims that both use multi-factor authentication. Which statement is correct?",
+      "options": [
+        "Only the door combines two different factor types",
+        "Only the portal combines two different factor types",
+        "Both of them combine two different factor types",
+        "Neither of them combines two different factor types"
+      ],
+      "answer": 0,
+      "explain": "The door combines something you have with something you are. The portal asks for two things you know, and two items of the same factor type are not multi-factor authentication."
+    },
+    {
+      "q": "Five administrators share one login named \"admin\" and all know its password. Someone uses the login to delete a customer database, and the log shows only \"admin\". Which change would let the company trace such an action to one person?",
+      "options": [
+        "A policy that changes the shared password every 30 days",
+        "A vault that checks out the password to one named person",
+        "A hardware token that the five administrators pass around",
+        "A role that groups the five administrators in one place"
+      ],
+      "answer": 1,
+      "explain": "Privileged access management keeps the privileged password in a vault and records which person checked it out and when. A regular password change still leaves five people with the same credential at the same time."
+    },
+    {
+      "q": "A system administrator reads email and browses the web while signed in with full administrator rights. A malicious web page takes over the workstation with those rights. The administrator account already has a long password and a second factor. Which practice would have limited the damage?",
+      "options": [
+        "A shared administrator account for the whole operations team",
+        "A hardware token in place of the current second factor",
+        "A yearly review of the administrator account by a manager",
+        "A standard account for daily work, with elevation per task"
+      ],
+      "answer": 3,
+      "explain": "Privileged rights should be active only while an administrative task needs them, so malware met during daily work gets standard rights. A stronger second factor does not help, because the attack happens after a valid sign-in."
+    },
+    {
+      "q": "A backup operator must copy every file on a server to tape each night and has no other duties on that server. The server administrator proposes full administrator rights for the operator \"to be safe\". Which grant follows the principle of least privilege?",
+      "options": [
+        "Read access to every file on the server",
+        "Full control of every file on the server",
+        "Administrator rights during backup hours",
+        "Read access to files the operator created"
+      ],
+      "answer": 0,
+      "explain": "Least privilege grants exactly what the task needs, and the backup task needs to read all files. Read access to only the files that the operator created is too little, because the backup would then be incomplete."
+    },
+    {
+      "q": "An on-call engineer needs administrator rights on production servers about twice a year, during emergencies. Today the engineer holds these rights permanently. Which change applies the principle of least privilege and keeps emergency response possible?",
+      "options": [
+        "Keeping the permanent rights and adding a longer password",
+        "Removing the rights and refusing all emergency requests",
+        "Granting the rights on request, for a limited time, with logging",
+        "Sharing one administrator account among the on-call team"
+      ],
+      "answer": 2,
+      "explain": "Least privilege limits access in duration as well as in scope, so rights that are needed twice a year are granted only when needed. A shared account keeps the standing access and also removes accountability."
+    },
+    {
+      "q": "One accounts clerk can create a new vendor and can also approve payments to that vendor. The job description of the clerk includes both tasks, and the clerk holds no other permissions. An auditor flags a fraud risk. Which principle does the setup violate?",
+      "options": [
+        "Least privilege access",
+        "Separation of duties",
+        "Need-to-know access",
+        "Defense in depth"
+      ],
+      "answer": 1,
+      "explain": "Separation of duties splits a sensitive process so that no single person can complete it alone. Least privilege is not the problem here, because the clerk holds only the permissions of the assigned job."
+    },
+    {
+      "q": "A bank assigns vendor creation to one employee and payment approval to a different employee. Neither employee can perform the other task. A manager claims that a fraudulent payment to a fake vendor is now impossible. Which assessment is correct?",
+      "options": [
+        "Wrong, because one employee still holds both rights",
+        "Correct, because no single employee holds both rights",
+        "Correct, because each employee holds the least privilege",
+        "Wrong, because the two employees can still collude"
+      ],
+      "answer": 3,
+      "explain": "Separation of duties does not make fraud impossible; it forces two people to cooperate, which is harder and easier to detect. The fact that no single employee holds both rights is true, but it does not stop collusion."
+    },
+    {
+      "q": "A research lab lets each author decide who may open the files that the author creates. After a leak, the lab adopts a model in which the system compares a label on each file with the clearance of each user, and authors cannot change the result. Which change did the lab make?",
+      "options": [
+        "From MAC to DAC",
+        "From DAC to MAC",
+        "From DAC to RBAC",
+        "From RBAC to MAC"
+      ],
+      "answer": 1,
+      "explain": "Owner-decided sharing is discretionary access control, and central decisions from labels and clearances are mandatory access control. The lab did not move to RBAC, because job roles play no part in the new decision."
+    },
+    {
+      "q": "A defense agency labels every file with a classification, and every user holds a clearance. The author of a Secret file tries to give read access for one day to a colleague with a lower clearance. The system refuses. Which property of mandatory access control explains the refusal?",
+      "options": [
+        "The owner of a file cannot override the central policy",
+        "The owner of a file must approve each request in person",
+        "The role of the colleague must be approved by a manager",
+        "The owner of a file can share it only inside one role"
+      ],
+      "answer": 0,
+      "explain": "Under mandatory access control, the system enforces the label and clearance policy, and no owner can make an exception. Owner approval of requests describes discretionary access control, where the same share would succeed."
+    },
+    {
+      "q": "A company with 800 staff lets each file owner grant access to colleagues one by one. Nobody can tell who may see what, and access does not follow job changes. Management wants permissions attached to job functions, so that a job change needs one edit. Which change does this require?",
+      "options": [
+        "From MAC to RBAC",
+        "From DAC to MAC",
+        "From RBAC to ABAC",
+        "From DAC to RBAC"
+      ],
+      "answer": 3,
+      "explain": "Access granted at the discretion of each owner is discretionary access control. Permissions attached to job functions are role-based access control. Mandatory access control would use labels and clearances, which the scenario does not mention."
+    },
+    {
+      "q": "A hospital gives every member of the group Nurses access to all patient records. The hospital now wants a nurse to open a record only when the patient is on the ward of that nurse, the nurse is on shift, and the request comes from a hospital device. Which change does this require?",
+      "options": [
+        "From RBAC to MAC",
+        "From DAC to RBAC",
+        "From RBAC to ABAC",
+        "From ABAC to RBAC"
+      ],
+      "answer": 2,
+      "explain": "Attribute-based access control decides from attributes of the user, the resource, the device, and the environment, such as ward, shift, and device. A role alone cannot express conditions that change from request to request."
+    }
+  ]
+}

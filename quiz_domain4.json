@@ -1,0 +1,230 @@
+{
+  "id": "domain4",
+  "title": "Domain 4: Networking and Cloud Security Concepts",
+  "questionsPerGame": 10,
+  "minutes": 10,
+  "identification": "required",
+  "passFloor": null,
+  "questions": [
+    {
+      "q": "Two laptops on one office switch can ping each other. Neither laptop can ping a server on a different IP subnet, although the server is running and other offices reach it. The technician finds that both laptops have a wrong default gateway address. At which OSI layer is this fault?",
+      "options": [
+        "Layer 1, the physical layer",
+        "Layer 2, the data link layer",
+        "Layer 3, the network layer",
+        "Layer 4, the transport layer"
+      ],
+      "answer": 2,
+      "explain": "The default gateway is the router that forwards packets to other subnets by IP address, which is a Layer 3 function. Layer 2 is tempting because of the switch, but the laptops reach each other, so frame delivery inside the subnet works."
+    },
+    {
+      "q": "A sensor sends a small status message every second. A lost message does not matter, because the next message replaces it, but a late message makes the display misleading. A developer moves the sensor from UDP to TCP. Which effect does TCP have when a segment is lost?",
+      "options": [
+        "TCP resends it, and the newer data waits behind it",
+        "TCP discards it, and the newer data arrives without it",
+        "TCP reroutes it, and the newer data takes another path",
+        "TCP broadcasts it, and all hosts in the subnet get it"
+      ],
+      "answer": 0,
+      "explain": "TCP guarantees ordered delivery, so it retransmits the lost segment and holds back the newer data until the gap is filled. Delivery of newer data without the lost part is the behavior of UDP, which fits this sensor better."
+    },
+    {
+      "q": "An office laptop has the address 172.20.14.9 and uses no VPN and no proxy. The laptop opens a public web site, and the log of that site shows the visit as coming from 203.0.113.50. Which explanation fits?",
+      "options": [
+        "The DHCP server leased a second public address to the laptop",
+        "The switch replaced the MAC address with a public IP address",
+        "The DNS server resolved the laptop name to a public address",
+        "The border router translated the private source address"
+      ],
+      "answer": 3,
+      "explain": "The address 172.20.14.9 lies in the private range 172.16.0.0 to 172.31.255.255, so network address translation (NAT) at the border must replace it before the packet enters the internet. DHCP gave the laptop its private address and does not change packets in transit."
+    },
+    {
+      "q": "A firewall log shows the source address 2001:db8::8a2e:370:7334. A junior analyst says the entry is damaged, because it has fewer than eight groups and two colons in a row. Which statement is correct?",
+      "options": [
+        "The entry is damaged; IPv6 needs all eight groups written",
+        "The entry is valid; \"::\" replaces one run of zero groups",
+        "The entry is valid; \"::\" separates network and host parts",
+        "The entry is damaged; IPv6 uses dots between its groups"
+      ],
+      "answer": 1,
+      "explain": "An IPv6 address has 128 bits in eight hexadecimal groups, and \"::\" may replace one run of groups that are all zero. The double colon does not mark the border between the network part and the host part."
+    },
+    {
+      "q": "An employee on hotel Wi-Fi connects to the company VPN. All traffic goes through the tunnel to the company gateway and from there to the internet. The employee then types a password into a fake banking site and later says that the VPN should have prevented this. Which protection did the VPN provide?",
+      "options": [
+        "Confidentiality of traffic between laptop and gateway",
+        "Confidentiality of traffic between gateway and web site",
+        "Verification that each visited web site is authentic",
+        "Filtering of malicious content from visited web sites"
+      ],
+      "answer": 0,
+      "explain": "A VPN encrypts traffic only inside the tunnel, here between the laptop and the company gateway, which protects it from others on the hotel Wi-Fi. The tunnel ends at the gateway, and a VPN does not judge whether a web site is authentic."
+    },
+    {
+      "q": "Administrators manage routers from the internal network with a remote command-line protocol that sends passwords in clear text. A new policy requires the encrypted replacement for that protocol. The firewall team must update the rules in front of the routers. Which change matches the policy?",
+      "options": [
+        "Allow TCP 23 and block TCP 22",
+        "Allow TCP 22 and block TCP 21",
+        "Allow TCP 22 and block TCP 23",
+        "Allow TCP 443 and block TCP 80"
+      ],
+      "answer": 2,
+      "explain": "The clear-text protocol is Telnet on TCP 23, and its encrypted replacement is SSH on TCP 22. Port 21 belongs to FTP, so a block on port 21 leaves Telnet open."
+    },
+    {
+      "q": "A firewall allows outbound connections on TCP port 443 only and tracks the state of each connection. Malware on a workstation opens a normal connection on port 443 and sends stolen files in its own format, which is not web traffic. The firewall lets the files pass. Which capability would detect this traffic?",
+      "options": [
+        "Stateful tracking of each open connection",
+        "Application-layer inspection of content",
+        "Stateless filtering by address and port",
+        "Address translation of the source address"
+      ],
+      "answer": 1,
+      "explain": "Only inspection at the application layer can see that the content on port 443 is not real web traffic. Stateful tracking is already active here, and it accepts the connection because the port and the connection state are both permitted."
+    },
+    {
+      "q": "A small office protects its Wi-Fi with one passphrase that all staff share. An employee left on bad terms, and the office spent a day changing the passphrase on every device. Which design removes the need to repeat this work when the next employee leaves?",
+      "options": [
+        "A longer shared passphrase, changed once a year",
+        "A hidden network name on every access point",
+        "A MAC address filter that lists all staff devices",
+        "An individual sign-in for each user (enterprise mode)"
+      ],
+      "answer": 3,
+      "explain": "With individual credentials, the office disables one account and nobody else is affected. A MAC filter still needs upkeep for every device, and a MAC address is easy to copy."
+    },
+    {
+      "q": "An executive keeps Bluetooth enabled and discoverable on a phone during conferences. The executive says the risk is covered, because the phone uses WPA3 at the office and a VPN for all internet traffic. Which assessment is correct?",
+      "options": [
+        "Bluetooth is a Wi-Fi mode, so WPA3 already protects it",
+        "Bluetooth is IP traffic, so the VPN already protects it",
+        "Bluetooth is a separate link, so neither protects it",
+        "Bluetooth is short range, so it needs no protection"
+      ],
+      "answer": 2,
+      "explain": "Bluetooth is its own short-range radio link, outside Wi-Fi and outside the VPN tunnel, so a discoverable phone stays exposed to nearby attackers. Short range reduces the number of attackers but does not remove the risk in a crowded hall."
+    },
+    {
+      "q": "A water utility runs pumps with industrial controllers that operate day and night. The security team wants to restart the controllers during operation each month for patches, as it does with office computers. The plant engineers accept patches only in planned maintenance stops. Which priority explains the position of the engineers?",
+      "options": [
+        "Availability and safety rank first in control systems",
+        "Confidentiality and privacy rank first in control systems",
+        "Integrity of patches cannot be checked on controllers",
+        "Isolation of controllers makes patches unnecessary there"
+      ],
+      "answer": 0,
+      "explain": "An unplanned stop of an industrial control system can have physical consequences, so availability and safety come before other goals. The engineers do not claim that patches are unnecessary, because they accept them in planned stops."
+    },
+    {
+      "q": "A company has 200 network cameras that cannot run security software. The cameras share one VLAN with the finance workstations, and they need to talk only to the video recorder. An attacker takes over one camera and starts to scan the finance workstations. Which change most directly limits what a compromised camera can reach?",
+      "options": [
+        "A stronger administrator password on every workstation",
+        "A perimeter firewall rule that blocks inbound traffic",
+        "A fixed IP address and a host name for every camera",
+        "A dedicated VLAN with rules for needed traffic only"
+      ],
+      "answer": 3,
+      "explain": "A separate segment with strict rules stops a compromised camera from reaching the finance workstations at all. A perimeter firewall does not help, because the scan runs between two devices inside the network."
+    },
+    {
+      "q": "A company runs a public web server on the internal network, in the same zone as its database and file servers. The perimeter firewall forwards port 443 from the internet to the web server. An attacker takes over the web server through a software flaw. What does the attacker gain here that a DMZ placement would have prevented?",
+      "options": [
+        "Reach to the internet without a firewall in the path",
+        "Reach to internal servers without a firewall in the path",
+        "Control of the rule set on the perimeter firewall",
+        "Access to the traffic of all other companies on the internet"
+      ],
+      "answer": 1,
+      "explain": "A DMZ puts a firewall between the public server and the internal zone, so a compromised web server cannot connect freely to internal systems. Control of the web server does not give control of the firewall rules."
+    },
+    {
+      "q": "Forty servers share one VLAN in a data center. A firewall filters traffic that enters or leaves the VLAN. An attacker takes over one server and then connects freely to the other thirty-nine. The team wants to control traffic between individual servers, including servers in the same subnet. Which control fits?",
+      "options": [
+        "Micro-segmentation with a policy per workload",
+        "One additional VLAN that holds all forty servers",
+        "A demilitarized zone that holds all forty servers",
+        "A stateful firewall at the internet perimeter"
+      ],
+      "answer": 0,
+      "explain": "Micro-segmentation applies a policy to each workload, so it can block traffic between two servers in the same subnet. A VLAN or a DMZ that holds all forty servers still lets them talk to each other freely."
+    },
+    {
+      "q": "A company installs two identical firewalls of the same model as a failover pair at its perimeter. The second firewall takes over only if the first one stops working. A manager reports that the company now has defense in depth. Which assessment is correct?",
+      "options": [
+        "It is defense in depth; two devices form two layers",
+        "It is zero trust; each device verifies every request",
+        "It is redundancy; one flaw defeats both devices",
+        "It is segmentation; each device forms a separate zone"
+      ],
+      "answer": 2,
+      "explain": "A failover pair improves availability, but traffic passes only one device, and both share the same flaws. Defense in depth needs different layers of controls, so that an attacker who passes one control still meets another."
+    },
+    {
+      "q": "Employees sign in to the company VPN once and can then reach every internal server. A thief steals a company laptop with an active VPN session and opens the human resources system. Which change follows the Zero Trust approach?",
+      "options": [
+        "Require multi-factor authentication once at VPN sign-in",
+        "Check user and device again for each resource request",
+        "Limit VPN sign-in to laptops that the company manages",
+        "Place all of the internal servers in one trusted VLAN"
+      ],
+      "answer": 1,
+      "explain": "Zero Trust does not trust a request because of its network location or an earlier sign-in, so it verifies each request to each resource. Multi-factor authentication once at sign-in still gives the open session access to everything."
+    },
+    {
+      "q": "A developer opens the web portal of a cloud provider at night and creates three database servers in a few minutes. No employee of the provider takes part. The servers keep the same size for the whole year, and the company pays a flat yearly fee. Which cloud characteristic does this show?",
+      "options": [
+        "Rapid elasticity",
+        "Measured service",
+        "Resource pooling",
+        "On-demand self-service"
+      ],
+      "answer": 3,
+      "explain": "The customer provisions resources alone, without human interaction with the provider, which is on-demand self-service. Rapid elasticity is about capacity that grows and shrinks with demand, and here the size never changes."
+    },
+    {
+      "q": "A company runs its mail server on virtual machines that it rents from a cloud provider. The company then moves to a hosted mail service that staff use through a browser. Which responsibility moves from the company to the provider with this change?",
+      "options": [
+        "Patching the operating system of the mail server",
+        "Managing the user accounts and access rights",
+        "Classifying the data that the mailboxes hold",
+        "Securing the physical data center and its hardware"
+      ],
+      "answer": 0,
+      "explain": "The customer patches the guest operating system in IaaS, and the provider does so in SaaS. Physical security does not move, because it belongs to the provider in both models."
+    },
+    {
+      "q": "A company uses a SaaS file service. An employee sets a folder with customer data to \"anyone with the link\", and the data leaks. The provider had no breach, and the service worked as designed. Which statement about the shared security model fits this case?",
+      "options": [
+        "Data and access settings pass over to the provider in SaaS",
+        "Data stays with the customer only in IaaS and in PaaS",
+        "Data and access settings stay with the customer in SaaS",
+        "Access settings stay with the customer only in IaaS"
+      ],
+      "answer": 2,
+      "explain": "The customer stays responsible for its data and for who may access it in every service model, including SaaS. The provider runs the application in SaaS, but it does not decide how the customer shares its own folders."
+    },
+    {
+      "q": "Five regional hospitals with the same regulatory duties pay together for one cloud environment. One of the hospitals operates it, and only the five hospitals may use it. No other environment is linked to it. Which deployment model is this?",
+      "options": [
+        "Private cloud",
+        "Community cloud",
+        "Hybrid cloud",
+        "Public cloud"
+      ],
+      "answer": 1,
+      "explain": "A community cloud serves several organizations that have common requirements. A private cloud serves one organization only, and a hybrid cloud needs two or more linked environments."
+    },
+    {
+      "q": "A cloud provider serves many customers from the same physical servers and assigns the hardware among them as it sees fit. A customer does not know which physical server holds its virtual machine. This customer has a fixed capacity and pays a flat monthly fee. Which cloud characteristic does this describe?",
+      "options": [
+        "Rapid elasticity",
+        "Measured service",
+        "Broad network access",
+        "Resource pooling"
+      ],
+      "answer": 3,
+      "explain": "Resource pooling means that the provider serves many tenants from common hardware, and the customer has no knowledge of the exact location. Rapid elasticity does not fit, because the capacity of this customer is fixed."
+    }
+  ]
+}
