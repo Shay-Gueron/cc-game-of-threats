@@ -11,7 +11,7 @@
     {
       "id": "domain1",
       "title": "Domain 1: Security Principles",
-      "open": false
+      "open": true
     },
     {
       "id": "domain2",
